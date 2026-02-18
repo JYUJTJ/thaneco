@@ -115,6 +115,23 @@
             text-align: center;
         }
 
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffd78c;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fef7e6;
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        select option {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fef7e6;
+        }
+
         input::placeholder {
             color: rgba(254, 247, 230, 0.7);
         }
@@ -214,12 +231,19 @@
             <h1><i class="fas fa-star"></i> عمل رابط تهنئة بمجيئ عيد رمضان 2026 بالاسم <i class="fas fa-star"></i></h1>
             <div class="input-group">
                 <div>
+                    <label for="suitable">نوع التهنئة :</label>
+                    <select id="suitable" name="suitable">
+                        <option value="Ramadan">شهر رمضان</option>
+                        <option value="Eidal-Ramadan">عيد رمضان</option>
+                    </select>
+                </div>
+                <div>
                     <label for="name">الاسم :</label>
                     <input type="text" id="name" name="name">
                 </div>
                 <div>
                     <label for="message">الرسالة :</label>
-                    <input type="text" id="message" name="message" value="أتمنى لكم عيد مبارك">
+                    <input type="text" id="message" name="message" value="رمضان مبارك وعيد مبارك">
                 </div>
             </div>
             <button id="makelinkbutton">انشاء</button>

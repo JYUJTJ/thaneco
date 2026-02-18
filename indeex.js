@@ -11,7 +11,7 @@ function openMessage() {
 if (urlParams.has("suitable")) {
     const suitable = urlParams.get("suitable");
 
-    const templatePath = `Template.html`;
+    const templatePath = `Templates/${suitable}.html`;
 
     fetch(templatePath)
         .then(res => {
@@ -56,12 +56,14 @@ if (!urlParams.has("suitable")) {
     const linkoutput = document.getElementById('linkoutput');
     const copyButton = document.getElementById('copy');
     const nameInput = document.getElementById('name');
+    const suitableInput = document.getElementById('suitable');
 
     makelinkbutton.addEventListener('click', () => {
         const name = nameInput.value.trim();
         const message = document.getElementById('message').value.trim();
+        const suitable = suitableInput.value;
         if (name) {
-            const url = window.location.origin + window.location.pathname + '?suitable=1&name=' + encodeURIComponent(name) + '&message=' + encodeURIComponent(message);
+            const url = window.location.origin + window.location.pathname + '?suitable=' + encodeURIComponent(suitable) + '&name=' + encodeURIComponent(name) + '&message=' + encodeURIComponent(message);
             linkoutput.textContent = url;
             document.getElementById('share-buttons').style.display = 'flex';
         } else {
